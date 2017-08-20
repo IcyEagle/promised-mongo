@@ -13,16 +13,16 @@ function toError(error) {
   }
 
   var msg = error.err || error.errmsg || error.errMessage || error;
-  var e = new _mongodbCore.MongoError(msg);
+  let e = new _mongodbCore.MongoError(msg);
 
   // Get all object keys
-  var keys = typeof error == 'object' ? Object.keys(error) : [];
+  let keys = typeof error == 'object' ? Object.keys(error) : [];
 
   if (typeof error === 'object') {
-    var _keys = Object.keys(error);
+    let keys = Object.keys(error);
 
-    for (var i = 0; i < _keys.length; i++) {
-      e[_keys[i]] = error[_keys[i]];
+    for (let i = 0; i < keys.length; i++) {
+      e[keys[i]] = error[keys[i]];
     }
   }
 
