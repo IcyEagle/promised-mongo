@@ -26,10 +26,13 @@
   },
   "scripts": {
     "test": "mocha",
-    "main": "dist/index.js"
+    "main": "dist/index.js",
+    "build": "rm -rf dist; babel lib --quiet --out-dir dist"
   },
   "devDependencies": {
-    "babel": "^5.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-types": "^6.26.0",
     "chai": "^3.0.0",
     "grunt": "^0.4.5",
     "grunt-babel": "^5.0.1",
